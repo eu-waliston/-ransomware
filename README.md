@@ -1,2 +1,48 @@
 # -ransomware
 Script básico de um ransomware
+
+Este script simula o funcionamento do processo de criptografia de arquivos de um ransomware genérico. Para a simulação usaremos um servidor imaginário com o respectivo par de chaves assimétricas.
+
+Antes de executar, crie arquivos com a extensão '.teste' no diretório onde se localiza o arquivo do script e salve as chaves privada e pública do "servidor do malware" (descritas a seguir) em arquivos  nomeados respectivamente como "Server-privateKey.pem" e "Server-publicKey.pem".
+
+Chave Privada:
+
+-----BEGIN RSA PRIVATE KEY-----
+MIIEowIBAAKCAQEAoUm6sd4fGJ/8t1L2/tx8MJqZummUEX9VyRstr7ABVq1t/t0S
+wVx0I2YWcvLA4FENAOdqfWdNwPgpmKu8csybsrnx6Ea+JdS+1Yn4hGwk6jeHA3Sw
+Q6OUY2uuN9veWp27qOaECQrk0IAT5FxKu02GdgRr8ABxbWPkamLeaDX+LGcxaQfU
+qkAbIDYYWFn19CPlBG9fAQfyMhw4bQFVu2rC4WWEydVCYeM//kBB/yzeNV55iqp5
+2gED3n3AnX5TP+QnzaFESKQnR+JFIOKzR6XI/kMlbHSFwY3Ov1+0bpPJm7VGiYzK
+9eOKDOJbGz1qdNqlsn3PzbOxJ/V4ATd0QpdCXQIDAQABAoIBADzdshLFnD6Swa/9
+IzDyy/sbnL/4b+RahWkrVIZkiVzIfiYcD6Pg3AMv13Dxo1ADxkB9FHbWsUUNYcU3
+qho4lNlRyrS5XbCxJIM5Wgu/M/8fjVgEhTBBXxJV5J034CWaOON4eoNfFRKKAve+
+zIT6sK+A46riv+tkMyLixMPW/GCMxyeuJ4R7TFBBNbFmIUZ4o2P8m5PtqoP7lt0L
+T+HmXjh+eUXcsyyBRNe2rZZ38TzxpIXpt2sMEDgfvuXnoX593k+L0hnhTSTfgt+I
+5oB0Qbn35fZj9ExUjCIeD6zsr4HP86mOxR+vqFoxyVk3b8ZI+0fn4XHR6Ul8TmXF
+t7/atoECgYEAvhj1nCQ/OBCTqAza/cWIT3T8fKjLKa3KgWovxN8ttfYHbqyFtYJp
+giPe4YJKLHbO/BmNEHNvSYG4LmrOmgEHO9HFnWLvWc5d7wCAZ1W5IIQSZCKMy8OR
+/JQCJP/45D+cVe5x1RU5QJSfGzgnN7ZyHEgbC8K2WxhQF6/lVuKZ/xkCgYEA2TPx
+xLsjCXJzIqK8V/v+EJCREnNNfDFIXptzvDKVZ7A8Uu7rAtHukb9ucnH7AFxx6Zfj
+GfBTQdV231uRNxdezCEupkzO2xLz7CR8PFz3W/ChSpoAdUzZaNoRJtClSKlnbSIO
+gvTct2tSkt7llHBlSoORafjR6awNoeE9RdoFueUCgYBxUvXQYHdjl9Y+f3Nph4GM
+RKRkOEftD9LCNahGh/l7GTEzFBwdqaH2WCX9b6uCOE2KUj0bCoXUX0WKPlftzSEf
+0x0ohxtDAVhUK4tgjuTu8mz4TvR6YJs95IomvoYEo7syKxSnP6DC1BbJpj8S4mvC
+WmXtK+WEBslwZYalti6xuQKBgQCvUkKA7h0l7wAIoRsuWfWGIWs4XWHaMV2dIBWX
+f60heRv4RWnlaNcNRlw8fMyCShyY1UU3FsndhhThzeO1eGPImbAyBCWkp/PEVN8D
+SndP+zf2I8Di7hk/jWXy0s/XiwY1DRxxkHzogPSyIMFnxCG+t9yUkYe++mY2mL0A
+uS+OEQKBgDiSFo4bRT8I0Nfu9H4oNVI/DR//1om3EOIdF2ZfXUDqqBkQ65v05vYT
+p4sAeF5uECWQfYgLjrehcY+5GRxyrMYuPIuz8mZG6gzCHfR7VSJW+q1wJTGJFwNB
+gZMCf5Tc0Tm5Tw2Lxdz8FHWGjbWZtl5VGxfrxtavPLkdY1ebP1In
+-----END RSA PRIVATE KEY-----
+
+Chave Pública:
+
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoUm6sd4fGJ/8t1L2/tx8
+MJqZummUEX9VyRstr7ABVq1t/t0SwVx0I2YWcvLA4FENAOdqfWdNwPgpmKu8csyb
+srnx6Ea+JdS+1Yn4hGwk6jeHA3SwQ6OUY2uuN9veWp27qOaECQrk0IAT5FxKu02G
+dgRr8ABxbWPkamLeaDX+LGcxaQfUqkAbIDYYWFn19CPlBG9fAQfyMhw4bQFVu2rC
+4WWEydVCYeM//kBB/yzeNV55iqp52gED3n3AnX5TP+QnzaFESKQnR+JFIOKzR6XI
+/kMlbHSFwY3Ov1+0bpPJm7VGiYzK9eOKDOJbGz1qdNqlsn3PzbOxJ/V4ATd0QpdC
+XQIDAQAB
+-----END PUBLIC KEY-----
